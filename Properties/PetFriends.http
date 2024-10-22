@@ -3,4 +3,4 @@ GET http://localhost:5220/pets/
 
 
 ### 
-GET http://localhost:5220/pets/1
+GET http://localhost:5220/pets/4

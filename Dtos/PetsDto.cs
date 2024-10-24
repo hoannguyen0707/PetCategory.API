@@ -4,10 +4,10 @@ public record class PetsDto
 (
     int Id,
     string Name,
-    string Species,
+    string? Species,
     int Age,
-    string PhysicalDescription,
-    string PersonalityDescription,
+    string? PhysicalDescription,
+    string? PersonalityDescription,
     decimal Price,
     DateOnly JoinedDate
 );

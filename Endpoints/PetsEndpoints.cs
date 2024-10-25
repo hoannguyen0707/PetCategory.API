@@ -68,6 +68,17 @@ public static class PetsEndpoints
                     Results.NotFound() : Results.Ok(pet.ToDto());
         }).WithName(GetPetEndPointName);
 
+        //POST /pets
+        group.MapPost("/", (CreatePetDto newPet, PetFriendsContext dbContext) =>
+        {
+            Pet pet = newPet.ToEntity();
+            dbContext.Pets.Add(pet);
+            dbContext.SaveChanges();
+
+            return Results.CreatedAtRoute(GetPetEndPointName, new { id = pet.Id }, pet.ToDto());
+
+        }).WithParameterValidation();
+
         return group;
     }
 

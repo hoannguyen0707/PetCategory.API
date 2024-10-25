@@ -4,3 +4,18 @@ GET http://localhost:5220/pets/
 
 ### 
 GET http://localhost:5220/pets/3
+
+
+###
+POST http://localhost:5220/pets/
+Content-Type: application/json
+
+{
+    "Name":"Holland Lop",
+    "Species":"Rabbit ",
+    "Age":1,
+    "PhysicalDescription":"They have a gentle and rounded appearance.",
+    "PersonalityDescription":"often showing affection and becoming attached to their caregivers.",
+    "Price":79.99,
+    "JoinedDate":"2024-08-09"
+}

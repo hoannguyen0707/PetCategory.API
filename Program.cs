@@ -10,6 +10,6 @@ builder.Services.AddSqlite<PetFriendsContext>(connString);
 var app = builder.Build();
 
 app.MapPetsEndpoints();
-app.MigrateDb();
+app.MigrateDbAsync();
 
 app.Run();

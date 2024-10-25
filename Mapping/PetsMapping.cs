@@ -33,4 +33,19 @@ public static class PetsMapping
             JoinedDate = pet.JoinedDate
         };
     }
+
+    public static Pet ToEntity(this UpdatePetDto pet, int id)
+    {
+        return new Pet()
+        {
+            Id = id,
+            Name = pet.Name,
+            Species = pet.Species,
+            Age = pet.Age,
+            PhysicalDescription = pet.PhysicalDescription,
+            PersonalityDescription = pet.PersonalityDescription,
+            Price = pet.Price,
+            JoinedDate = pet.JoinedDate
+        };
+    }
 }

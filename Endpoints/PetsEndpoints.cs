@@ -55,29 +55,54 @@ public static class PetsEndpoints
         var group = app.MapGroup("pets").WithParameterValidation();
 
         //GET /pets
-        group.MapGet("/", (PetFriendsContext dbContext) =>
-                dbContext.Pets
+        group.MapGet("/", async (PetFriendsContext dbContext) =>
+               await dbContext.Pets
                     .Select(pet => pet.ToDto())
-                    .AsNoTracking());
+                    .AsNoTracking()
+                    .ToListAsync());
 
         //GET /pets/1
-        group.MapGet("/{id}", (int id, PetFriendsContext dbContext) =>
+        group.MapGet("/{id}", async (int id, PetFriendsContext dbContext) =>
         {
-            Pet? pet = dbContext.Pets.Find(id);
+            Pet? pet = await dbContext.Pets.FindAsync(id);
             return pet is null ?
                     Results.NotFound() : Results.Ok(pet.ToDto());
         }).WithName(GetPetEndPointName);
 
         //POST /pets
-        group.MapPost("/", (CreatePetDto newPet, PetFriendsContext dbContext) =>
+        group.MapPost("/", async (CreatePetDto newPet, PetFriendsContext dbContext) =>
         {
             Pet pet = newPet.ToEntity();
             dbContext.Pets.Add(pet);
-            dbContext.SaveChanges();
+            await dbContext.SaveChangesAsync();
 
             return Results.CreatedAtRoute(GetPetEndPointName, new { id = pet.Id }, pet.ToDto());
 
         }).WithParameterValidation();
+
+
+        //PUT /pets/1
+        group.MapPut("/{id}", async (int id, UpdatePetDto updPet, PetFriendsContext dbContext) =>
+        {
+            var existingPet = await dbContext.Pets.FindAsync(id);
+            if (existingPet is null)
+            {
+                return Results.NotFound();
+            }
+
+            dbContext.Entry(existingPet).CurrentValues.SetValues(updPet.ToEntity(id));
+            await dbContext.SaveChangesAsync();
+            return Results.NoContent();
+        });
+
+        //DELETE /pets/3
+        group.MapDelete("/{id}", async (int id, PetFriendsContext dbContext) =>
+        {
+            await dbContext.Pets
+            .Where(pet => pet.Id == id)
+            .ExecuteDeleteAsync();
+            return Results.NoContent();
+        });
 
         return group;
     }

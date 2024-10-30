@@ -1,51 +1,36 @@
 using System;
-using ChallengePetFriends.API.Dtos;
-using ChallengePetFriends.API.Entities;
+using PetCategory.API.Dtos;
+using PetCategory.API.Entities;
 
-namespace ChallengePetFriends.API.Mapping;
+namespace PetCategory.API.Mapping;
 
 public static class PetsMapping
 {
-    public static PetsDto ToDto(this Pet pet)
+    public static PetsDto ToDto(this Entities.PetCategories pet)
     {
         return new(
             pet.Id,
             pet.Name,
-            pet.Species,
-            pet.Age,
-            pet.PhysicalDescription,
-            pet.PersonalityDescription,
-            pet.Price,
-            pet.JoinedDate
+            pet.Description
         );
     }
 
-    public static Pet ToEntity(this CreatePetDto pet)
+    public static Entities.PetCategories ToEntity(this CreatePetDto pet)
     {
-        return new Pet()
+        return new Entities.PetCategories()
         {
             Name = pet.Name,
-            Species = pet.Species,
-            Age = pet.Age,
-            PhysicalDescription = pet.PhysicalDescription,
-            PersonalityDescription = pet.PersonalityDescription,
-            Price = pet.Price,
-            JoinedDate = pet.JoinedDate
+            Description = pet.Description
         };
     }
 
-    public static Pet ToEntity(this UpdatePetDto pet, int id)
+    public static Entities.PetCategories ToEntity(this UpdatePetDto pet, int id)
     {
-        return new Pet()
+        return new Entities.PetCategories()
         {
             Id = id,
             Name = pet.Name,
-            Species = pet.Species,
-            Age = pet.Age,
-            PhysicalDescription = pet.PhysicalDescription,
-            PersonalityDescription = pet.PersonalityDescription,
-            Price = pet.Price,
-            JoinedDate = pet.JoinedDate
+            Description = pet.Description
         };
     }
 }

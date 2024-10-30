@@ -3,7 +3,7 @@ GET http://localhost:5220/pets/
 
 
 ### 
-GET http://localhost:5220/pets/3
+GET http://localhost:5220/pets/6
 
 
 ###
@@ -11,26 +11,16 @@ POST http://localhost:5220/pets/
 Content-Type: application/json
 
 {
-    "Name":"Holland Lop",
-    "Species":"Rabbit",
-    "Age":1,
-    "PhysicalDescription":"They have a gentle and rounded appearance.",
-    "PersonalityDescription":"often showing affection and becoming attached to their caregivers.",
-    "Price":79.99,
-    "JoinedDate":"2024-08-09"
+    "Name":"Hamster",
+    "Description":"Small, nocturnal, and great for children"
 }
 
 
 ###
-PUT http://localhost:5220/pets/3
+PUT http://localhost:5220/pets/6
 Content-Type: application/json
 
 {
-    "Name":"Charlie",
-    "Species":"Parrot",
-    "Age":6,
-    "PhysicalDescription":"Green feathers with red tail",
-    "PersonalityDescription":"Talkative and social",
-    "Price":299.00,
-    "JoinedDate":"2024-03-13"
+    "Name":"Hamster UPD",
+    "Description":"Small, nocturnal, and great for children"
 }

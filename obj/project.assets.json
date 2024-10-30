@@ -3296,11 +3296,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hoannguyen1\\VSCodeProjects\\ChallengePetFriends\\ChallengePetFriends.API\\ChallengePetFriends.API.csproj",
-      "projectName": "ChallengePetFriends.API",
-      "projectPath": "C:\\Users\\hoannguyen1\\VSCodeProjects\\ChallengePetFriends\\ChallengePetFriends.API\\ChallengePetFriends.API.csproj",
+      "projectUniqueName": "C:\\Users\\hoannguyen1\\PetFriends\\PetCategory.API\\PetCategory.API.csproj",
+      "projectName": "PetCategory.API",
+      "projectPath": "C:\\Users\\hoannguyen1\\PetFriends\\PetCategory.API\\PetCategory.API.csproj",
       "packagesPath": "C:\\Users\\hoannguyen1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hoannguyen1\\VSCodeProjects\\ChallengePetFriends\\ChallengePetFriends.API\\obj\\",
+      "outputPath": "C:\\Users\\hoannguyen1\\PetFriends\\PetCategory.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hoannguyen1\\AppData\\Roaming\\NuGet\\NuGet.Config"

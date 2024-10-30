@@ -1,14 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ChallengePetFriends.API.Dtos;
+namespace PetCategory.API.Dtos;
 
 public record class UpdatePetDto
 (
     [Required][StringLength(50)] string Name,
-    [Required][StringLength(50)] string Species,
-    int Age,
-    [StringLength(250)] string? PhysicalDescription,
-    [StringLength(250)] string? PersonalityDescription,
-    decimal Price,
-    DateOnly JoinedDate
+    [StringLength(250)] string Description
 );

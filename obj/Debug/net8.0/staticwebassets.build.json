@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "2DfPjMuhbWd7qsFGtadbG4aK+kPkcPJi7aw/UcBORq0=",
-  "Source": "ChallengePetFriends.API",
-  "BasePath": "_content/ChallengePetFriends.API",
+  "Hash": "Of8kmkZdhyINMQYKdgemKDXiSylmvcDuJbLozRqVLNc=",
+  "Source": "PetCategory.API",
+  "BasePath": "_content/PetCategory.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
